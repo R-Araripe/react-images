@@ -23,8 +23,9 @@ type Props = PropsWithStyles &
 export const headerCSS = ({ interactionIsIdle }: State) => ({
   alignItems: 'center',
   display: 'flex ',
-  flex: '0 0 auto',
-  justifyContent: 'space-between',
+//   flex: '0 0 auto',
+  flexFlow: 'row no-wrap',
+  justifyContent: 'content-between',
   opacity: interactionIsIdle ? 0 : 1,
   padding: 10,
   paddingBottom: 20,
@@ -43,7 +44,9 @@ export const headerCSS = ({ interactionIsIdle }: State) => ({
 const headerBaseClassName = componentBaseClassNames.Header
 
 const Header = (props: Props) => {
-  const { components, getStyles, getCloseLabel, getFullscreenLabel, innerProps, isModal, modalProps } = props
+  const { components, getStyles, getCloseLabel, getFullscreenLabel, innerProps, isModal, modalProps, data } = props
+
+  console.log('INSIDE HEADER: props ', props)
 
   if (!isModal) return null
 
@@ -53,17 +56,48 @@ const Header = (props: Props) => {
   const state = { isFullscreen, isModal }
 
   return (
-    <Div
+    //   <div class="d-flex justify-content-between" style={{
+    //     background: 'linear-gradient(rgba(0,0,0), rgba(0,0,0))',
+
+    //     //   display: "flex",
+    //     //   flexDirection: "row",
+    //     //   justifyContent: "between",
+    //        }}>
+    //            <span>
+
+    //            </span>
+    //       <span >
+    //           hello
+    //       </span>
+    //       <span style={{marginRight: "20px"}}>
+    //           there
+    //       </span>
+    //   </div>
+
+    <div
       css={getStyles(headerBaseClassName, props)}
-      className={className(headerBaseClassName, state)}
+      className="d-flex justify-content-between"
+    //   className={className(headerBaseClassName, state)}
+      style={{background: 'linear-gradient(rgba(0,0,0,0.33), rgba(0,0,0,0))'}}
       // TODO glam prefixer fails on gradients
       // https://github.com/threepointone/glam/issues/35
-      style={{
-        background: 'linear-gradient(rgba(0,0,0,0.33), rgba(0,0,0,0))',
-      }}
+    //   style={{
+    //     // background: 'linear-gradient(rgba(0,0,0,0.33), rgba(0,0,0,0))',
+    //     background: 'linear-gradient(rgba(0,0,0), rgba(0,0,0))',
+    //     padding: 10,
+    //     paddingBottom: 20,
+    //     top: 0,
+    //     left: 0,
+    //     right: 0,
+    //     zIndex: 1,
+    //   }}
       {...innerProps}
     >
-      <span />
+        <span>
+        </span>
+      <span style={{color: "white", fontFamily: "FreeMono, monospace"}} >
+          {data.title}
+      </span>
       <span>
         {allowFullscreen ? (
           <FullscreenButton
@@ -86,7 +120,7 @@ const Header = (props: Props) => {
           <Close size={32} />
         </CloseButton>
       </span>
-    </Div>
+    </div>
   )
 }
 

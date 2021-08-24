@@ -26,9 +26,13 @@ const viewBaseClassName = componentBaseClassNames.View
 const View = (props: Props) => {
   const { data, formatters, getStyles, index, isFullscreen, isModal } = props
   const innerProps = {
-    alt: formatters.getAltText({ data, index }),
+    // alt: formatters.getAltText({ data, index }),
     src: getSource({ data, isFullscreen }),
   }
+
+  console.log("INSIDE VIEW, data: ", data)
+  console.log("INSIDE VIEW, src: ", getSource({ data, isFullscreen }))
+  console.log("INSIDE VIEW, innerProps: ", innerProps)
 
   return (
     <Div css={getStyles(viewBaseClassName, props)} className={className(viewBaseClassName, { isFullscreen, isModal })}>

@@ -54,8 +54,10 @@ const footerBaseClassName = componentBaseClassNames.Footer
 const Footer = (props: Props) => {
   const { components, getStyles, innerProps, isFullscreen, isModal } = props
 
-  const style = isModal ? { background: 'linear-gradient(rgba(0,0,0,0), rgba(0,0,0,0.33))' } : null
+  console.log('IN FOOTER: props ', props)
 
+//   const style = isModal ? { background: 'linear-gradient(rgba(0,0,0,0), rgba(0,0,0,0.33))' } : null
+  const style = isModal ? { background: 'linear-gradient(rgba(0,0,0,0), rgba(0,0,0,0.33))' } : null
   const state = { isFullscreen, isModal }
   const cn = {
     container: className(footerBaseClassName, state),
@@ -88,7 +90,9 @@ const Footer = (props: Props) => {
 // Inner Elements
 // ==============================
 
-export const footerCaptionCSS = () => ({})
+export const footerCaptionCSS = () => ({
+    fontFamily: "FreeMono, monospace"
+})
 
 export const FooterCaption = (props: ViewType) => {
   const { currentView, getStyles, isFullscreen, isModal } = props

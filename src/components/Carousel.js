@@ -115,6 +115,7 @@ class Carousel extends Component<CarouselProps, CarouselState> {
   }
 
   componentDidMount() {
+    console.log("blerg")
     const { hideControlsWhenIdle, modalProps } = this.props
     const isModal = Boolean(modalProps)
 

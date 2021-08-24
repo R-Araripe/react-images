@@ -44,7 +44,8 @@ const Footer = ({ interactionIsIdle, ...props }) => (
       transition: 'opacity 300ms',
     }}
     style={{
-      background: 'linear-gradient(rgba(0,0,0,0), rgba(0,0,0,0.44))',
+      background: 'linear-gradient(rgba(0,0,0), rgba(0,0,0))',
+    //   background: 'linear-gradient(rgba(0,0,0,0), rgba(0,0,0,0.44))',
     }}
     {...props}
   />

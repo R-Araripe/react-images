@@ -47,8 +47,6 @@
     "nps": "^5.10.0",
     "nps-utils": "^1.7.0",
     "prettier": "^2.2.1",
-    "react": "^16.14.0",
-    "react-dom": "^16.14.0",
     "react-helmet": "^6.1.0",
     "react-lorem-component": "^0.13.0",
     "react-router-dom": "^5.2.0",
@@ -74,16 +72,15 @@
     "react-focus-on": "^3.5.1",
     "react-full-screen": "^1.0.1",
     "react-transition-group": "^4.4.1",
-    "react-view-pager": "^0.6.0"
+    "react-view-pager": "^0.6.0",
+    "watch": "^1.0.2"
   },
   "peerDependencies": {
-    "prop-types": "^15.7.2",
-    "react": "^16.2.0 || ^17.0.0",
-    "react-dom": "^16.2.0 || ^17.0.0"
+    "prop-types": "^15.7.2"
   },
   "scripts": {
     "build": "nps build",
-    "watch": "nps build.watch",
+    "watch": "watch 'yarn build' --wait=30",
     "delete": "rm -rf node_modules",
     "lint": "cross-env eslint .",
     "deploy": "cross-env NODE_ENV=production nps publish",
