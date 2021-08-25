@@ -25,14 +25,16 @@ export const headerCSS = ({ interactionIsIdle }: State) => ({
   display: 'flex ',
 //   flex: '0 0 auto',
   flexFlow: 'row no-wrap',
-  justifyContent: 'content-between',
+//   justifyContent: 'content-between',
+  justifyContent: 'center',
   opacity: interactionIsIdle ? 0 : 1,
   padding: 10,
   paddingBottom: 20,
-  position: 'absolute',
+//   position: 'absolute',
+  position: "relative",
   transform: `translateY(${interactionIsIdle ? -10 : 0}px)`,
   transition: 'opacity 300ms, transform 300ms',
-  top: 0,
+  top: 20,
   left: 0,
   right: 0,
   zIndex: 1,
@@ -76,7 +78,8 @@ const Header = (props: Props) => {
 
     <div
       css={getStyles(headerBaseClassName, props)}
-      className="d-flex justify-content-between"
+      className="d-flex justify-content-center"
+    //   className="d-flex justify-content-between"
     //   className={className(headerBaseClassName, state)}
       style={{background: 'linear-gradient(rgba(0,0,0,0.33), rgba(0,0,0,0))'}}
       // TODO glam prefixer fails on gradients
@@ -93,12 +96,13 @@ const Header = (props: Props) => {
     //   }}
       {...innerProps}
     >
-        <span>
-        </span>
+        {/* <span>
+            sdfsdf
+        </span> */}
       <span style={{color: "white", fontFamily: "FreeMono, monospace"}} >
           {data.title}
       </span>
-      <span>
+      <span style={{ position: "absolute", left: "90%" }}>
         {allowFullscreen ? (
           <FullscreenButton
             getStyles={getStyles}
