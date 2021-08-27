@@ -17,7 +17,7 @@ export const Header = ({ currentView, modalProps }) => {
       css={{
         alignItems: 'center',
         backgroundColor: 'white',
-        boxShadow: '0 1px 0 rgba(0, 0, 0, 0.1)',
+        boxShadow: '0 1px 0 rgba(0, 0, 0, 0.1)', // , 0.1)
         color: colors.N80,
         display: 'flex ',
         flex: '0 0 auto',

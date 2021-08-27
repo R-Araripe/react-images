@@ -23,15 +23,15 @@ type Props = PropsWithStyles &
 export const headerCSS = ({ interactionIsIdle }: State) => ({
   alignItems: 'center',
   display: 'flex ',
-//   flex: '0 0 auto',
+  //   flex: '0 0 auto',
   flexFlow: 'row no-wrap',
-//   justifyContent: 'content-between',
+  //   justifyContent: 'content-between',
   justifyContent: 'center',
   opacity: interactionIsIdle ? 0 : 1,
   padding: 10,
   paddingBottom: 20,
-//   position: 'absolute',
-  position: "relative",
+  //   position: 'absolute',
+  position: 'relative',
   transform: `translateY(${interactionIsIdle ? -10 : 0}px)`,
   transition: 'opacity 300ms, transform 300ms',
   top: 20,
@@ -79,31 +79,29 @@ const Header = (props: Props) => {
     <div
       css={getStyles(headerBaseClassName, props)}
       className="d-flex justify-content-center"
-    //   className="d-flex justify-content-between"
-    //   className={className(headerBaseClassName, state)}
-      style={{background: 'linear-gradient(rgba(0,0,0,0.33), rgba(0,0,0,0))'}}
+      //   className="d-flex justify-content-between"
+      //   className={className(headerBaseClassName, state)}
+      style={{ background: 'linear-gradient(rgba(0,0,0,0.33), rgba(0,0,0,0))' }}
       // TODO glam prefixer fails on gradients
       // https://github.com/threepointone/glam/issues/35
-    //   style={{
-    //     // background: 'linear-gradient(rgba(0,0,0,0.33), rgba(0,0,0,0))',
-    //     background: 'linear-gradient(rgba(0,0,0), rgba(0,0,0))',
-    //     padding: 10,
-    //     paddingBottom: 20,
-    //     top: 0,
-    //     left: 0,
-    //     right: 0,
-    //     zIndex: 1,
-    //   }}
+      //   style={{
+      //     // background: 'linear-gradient(rgba(0,0,0,0.33), rgba(0,0,0,0))',
+      //     background: 'linear-gradient(rgba(0,0,0), rgba(0,0,0))',
+      //     padding: 10,
+      //     paddingBottom: 20,
+      //     top: 0,
+      //     left: 0,
+      //     right: 0,
+      //     zIndex: 1,
+      //   }}
       {...innerProps}
     >
-        {/* <span>
+      {/* <span>
             sdfsdf
         </span> */}
-      <span style={{color: "white", fontFamily: "FreeMono, monospace"}} >
-          {data.title}
-      </span>
-      <span style={{ position: "absolute", left: "90%" }}>
-        {allowFullscreen ? (
+      <span style={{ color: 'white', fontFamily: 'FreeMono, monospace' }}>{data.title}</span>
+      <span style={{ position: 'absolute', left: '96%' }}>
+        {/* {allowFullscreen ? (
           <FullscreenButton
             getStyles={getStyles}
             innerProps={{
@@ -113,7 +111,7 @@ const Header = (props: Props) => {
           >
             <FsIcon size={32} />
           </FullscreenButton>
-        ) : null}
+        ) : null} */}
         <CloseButton
           getStyles={getStyles}
           innerProps={{
